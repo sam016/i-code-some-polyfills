@@ -4,7 +4,8 @@
   "description": "some polyfills for learning and demo purpose",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "bdd": "jest --watch"
   },
   "keywords": [
     "polyfills"
@@ -12,6 +13,10 @@
   "author": "sam016",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^26.0.14",
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
     "jest": "^26.5.2"
   }
 }
