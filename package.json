@@ -1,0 +1,17 @@
+{
+  "name": "i-code-some-polyfills",
+  "version": "1.0.0",
+  "description": "some polyfills for learning and demo purpose",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "polyfills"
+  ],
+  "author": "sam016",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.5.2"
+  }
+}
