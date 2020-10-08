@@ -1,4 +1,4 @@
-const someBind = require('../some-bind');
+const _ = require('../some-bind');
 
 test('someBind should return a new function', () => {
   const dbz = {
@@ -8,7 +8,7 @@ test('someBind should return a new function', () => {
     whoAmI: function () { },
   };
 
-  expect(someBind(dbz.whoAmI, naruto)).toBeInstanceOf(Function);
+  expect(dbz.whoAmI.someBind(naruto)).toBeInstanceOf(Function);
 });
 
 test('someBind should return correct data in context', () => {
@@ -25,7 +25,7 @@ test('someBind should return correct data in context', () => {
     },
   };
 
-  const newFx = someBind(dbz.whoAmI, naruto);
+  const newFx = dbz.whoAmI.someBind(naruto);
 
   expect(newFx()).toBe('naruto');
 });
@@ -44,7 +44,7 @@ test('someBind should return correct data in context along with arguments', () =
     },
   };
 
-  const newFx = someBind(dbz.whoAmI, naruto, 'ninja');
+  const newFx = dbz.whoAmI.someBind(naruto, 'ninja');
 
   expect(newFx('leaf', 'hokage')).toBe('naruto>ninja,leaf,hokage');
 });
@@ -59,6 +59,6 @@ test('someBind should throw invalid function when invalid function is passed', (
   };
 
   expect(() => {
-    someBind(dbz, naruto);
-  }).toThrowError('Invalid function');
+    dbz.someBind(naruto);
+  }).toThrowError('dbz.someBind is not a function');
 });
