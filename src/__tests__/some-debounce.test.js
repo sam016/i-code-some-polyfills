@@ -1,4 +1,4 @@
-const { someDebounce } = require('../some-debounce');
+const someDebounce = require('../some-debounce');
 
 test('Debounce should return a function', () => {
   expect(someDebounce(() => { }, 100)).toBeInstanceOf(Function);

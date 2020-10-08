@@ -1,4 +1,10 @@
 
+/**
+ * Debounce
+ *
+ * @param {function} fx Actual func
+ * @param {Number} ts Duration after which actual function would be triggered
+ */
 const someDebounce = (fx, ts) => {
   if (ts < 0) {
     throw new Error('Duration can\'t be negative');
@@ -20,4 +26,4 @@ const someDebounce = (fx, ts) => {
   };
 }
 
-module.exports = { someDebounce };
+module.exports = someDebounce;
