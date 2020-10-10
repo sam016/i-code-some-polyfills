@@ -1,11 +1,15 @@
 const someThrottle = require('../some-throttle');
 
 test('someThrottle should return a function', () => {
-  expect(someThrottle(() => { }, 0)).toBeInstanceOf(Function);
+  expect(someThrottle(() => { }, 100)).toBeInstanceOf(Function);
 });
 
 test('someThrottle should throw error for -ve duration', () => {
   expect(() => someThrottle(() => { }, -1)).toThrowError('Duration should be valid positive number.');
+});
+
+test('someThrottle should throw error if valid function is not passed', () => {
+  expect(() => someThrottle(888, 100)).toThrowError('Callback should be a valid function.');
 });
 
 test('someThrottle is called only 1 times in 100ms ', () => {

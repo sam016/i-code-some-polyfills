@@ -9,12 +9,12 @@ const someThrottle = (cb, duration) => {
 
   // callback should be a function
   if (typeof cb !== 'function') {
-    throw new Error('Callback should be a function')
+    throw new Error('Callback should be a valid function.');
   }
 
   // duration should be a valid positive number
   if (!(duration >= 0)) {
-    throw new Error('Duration should be valid positive number.')
+    throw new Error('Duration should be valid positive number.');
   }
 
   let isThrottled = false;

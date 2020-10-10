@@ -49,8 +49,20 @@ test('someBind should return correct data in context along with arguments', () =
   expect(newFx('leaf', 'hokage')).toBe('naruto>ninja,leaf,hokage');
 });
 
-
 test('someBind should throw invalid function when invalid function is passed', () => {
+  const dbz = {
+    me: 'dbz',
+  };
+  const naruto = {
+    me: 'naruto',
+  };
+
+  expect(() => {
+    dbz.someBind(naruto);
+  }).toThrowError('dbz.someBind is not a function');
+});
+
+test('someBind should throw invalid function when invalid function is passed (using prototype)', () => {
   const dbz = {
     me: 'dbz',
   };
